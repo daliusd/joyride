@@ -1,0 +1,9 @@
+node_modules
+/output
+/kicad/gerber_to_order/*
+!/kicad/gerber_to_order/*.zip
+/kicad/joyride-backups
+/kicad/fp-info-cache
+/kicad/*.lck
+/kicad/_autosave*
+/node_modules

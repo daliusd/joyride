@@ -1,0 +1,162 @@
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -100]
+      columns:
+        pinky:
+          key:
+            spread: 18
+            splay: 15
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [5, 0, 0, 0]
+              name: GP3
+            home:
+              bind: [0, 12, 0, 0]
+              name: GP8
+            top:
+              bind: [0, 8, 5, 0]
+              name: GP13
+        ring:
+          key:
+            spread: 18
+            stagger: 8
+            splay: -5
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 0, 2, 10]
+              name: GP4
+            home:
+              bind: [5, 0, 5, 0]
+              name: GP9
+            top:
+              bind: [0, 6, 0, 0]
+              name: GP14
+        middle:
+          key:
+            shift: [0.2, 0]
+            spread: 18
+            stagger: 17/3
+            splay: -5
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 10, 0, 5]
+              name: GP5
+            home:
+              bind: 5
+              name: GP10
+            top:
+              bind: [0, 0, 0, 0]
+              name: GP15
+        index:
+          key:
+            spread: 18
+            stagger: -17/3
+            splay: -5
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 5, 0, 0]
+              name: GP6
+            home:
+              bind: [5, 0, 5, 0]
+              name: GP11
+            top:
+              bind: [0, 0, 0, 6]
+              name: GP28
+        inner:
+          key:
+            spread: 18
+            stagger: -17/6
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [5, 24, 20, 2]
+              name: GP7
+            home:
+              bind: [0, 33, 0, 5]
+              name: GP12
+            top:
+              bind: [0, 0, 5, 5]
+              name: GP29
+      rows:
+        bottom:
+          padding: 17
+        home:
+          padding: 17
+        top:
+    thumb:
+      anchor:
+        ref: GP7
+        shift: [0,-24]
+      columns:
+        first:
+          key:
+            splay: -15
+          rows:
+            only:
+              name: GP2
+              bind: [10, 1, 5, 70]
+        second:
+          key:
+            spread: 18
+            splay: -10
+            origin: [-9, -9.5]
+          rows:
+            only:
+              name: GP1
+              bind: [0, 0, 5, 5]
+      rows:
+        only:
+          padding: 17
+      key:
+        footprints:
+outlines:
+  panel:
+    - what: rectangle
+      where: true
+      bound: true
+      asym: both
+      size: [18,17]
+      expand: 3
+      joints: round
+
+pcbs:
+  joyride:
+    outlines:
+      main:
+        outline: panel
+    footprints:
+      choc:
+        what: choc
+        where: true
+        adjust:
+          rotate: 180
+        params:
+          from: "{{name}}"
+          to: GND
+          keycaps: true
+          reverse: true
+      rp2040zero:
+        what: rp2040zero
+        where:
+          ref: GP12
+          shift: [12, -16.0]
+        params:
+          reverse: true
+      trrs:
+        what: trrs
+        where:
+          ref: GP12
+          shift: [40, 6.5]
+        params:
+          A: GND
+          B: GND
+          C: GP0
+          D: P3V3
+          reverse: true
+          symmetric: true
