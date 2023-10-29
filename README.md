@@ -8,6 +8,6 @@ This is my attempt to build keyboard with joysticks.
 
 Photo of assembled keyboard:
 
-![photo](./photo.png)
+![photo](./photo.jpg)
 
 NOTE: ⚠️ This is first version, so there are issues with it ⚠️
